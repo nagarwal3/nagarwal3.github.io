@@ -1,0 +1,466 @@
+
+/* ==========================================================================
+   Base styles:
+   ========================================================================== */
+   /* Fix to include padding and border in the total width for each element */
+   * {
+   	box-sizing: border-box;
+   }
+
+   /* Fix for responsive images */
+   img {
+   	max-width: 100%;
+   }
+
+   body {
+   	font-family: 'PT Sans', sans-serif;
+   }
+
+   section {
+   		width: 100%;
+		min-height: 100%;
+
+   }
+
+/*	===============================================
+	NAV
+	=============================================== */	
+
+
+	nav {
+		top: 0;
+		left: 0;
+		right: 0;
+		position: fixed;
+		background-color: white;
+		text-align: right;
+		width: 100%;
+		box-shadow: 1px 1px 1px grey;
+		z-index: 100;
+	}
+
+	nav ul {
+		padding: 1%;
+		margin: 0 auto;
+		list-style: none;
+		text-align: right;
+	}
+	nav ul li {
+		display: inline-block;
+	}
+	nav ul li a {
+		margin: 20px;
+		font-family: 'PT Sans', sans-serif;
+		font-size: 0.625rem;
+		letter-spacing: 0.3rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: gray;
+	}
+	
+	
+
+
+	/*Reference for animating SVG paths: https://css-tricks.com/svg-line-animation-works/*/
+
+
+/* ================================================
+	Header
+	================================================*/
+	header {	
+			width: 100%;
+			height: 100vh;
+			background-color: #f4f2f3;
+	}
+
+	#introtext {
+		position: absolute;
+		margin-left: 5%;
+		width: 40%;
+		background-color: #f4f2f3;
+		z-index: 90;
+
+	}
+
+	#intro-image {
+		position: absolute;
+		bottom: 0;
+		left: 30%;
+		margin-right: 5%;
+	}
+
+	#cup1 {
+		width:14%;
+		height: auto;
+	}
+
+	#cup2 {
+		width:14%;
+		height: auto;
+	}
+
+	#teapot {
+		margin-left: 9%;
+		margin-right-right: 9%;
+	}
+
+	#cup3 {
+		width:14%;
+		height: auto;
+		margin-left: 8%;
+		transform: scaleX(-1);
+	}
+
+	header h1 {
+		display: inline-block;
+		font-family: 'Yeseva One';
+		font-size: 3rem;
+		letter-spacing: 0.1rem;
+		border-bottom: 1px solid black;
+		margin-bottom: 0;
+		margin-top: 30%;
+	}
+
+
+
+	@keyframes dash {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+
+
+
+
+
+
+/* ==========================================================================
+   Typography:
+   ========================================================================== */
+   h1, h2, h3 {
+   	font-family: 'Yeseva One';
+   }
+
+   h2{
+
+   	font-size: 2rem;
+   	letter-spacing: .1rem;
+   }
+
+   h3 {
+
+   	text-transform: uppercase;
+   	letter-spacing: .105rem;
+   	margin-top: 3rem;
+   	padding-bottom: .5rem;
+   	border-bottom: 1px solid black;
+
+   }
+
+   h4 {
+   	
+   	text-align: left;
+   	font-size: .75rem;
+   	margin-top: 0;
+   	margin-bottom: 0;
+   	margin-left: 2rem;
+   	line-height: 1rem;
+
+   }
+
+   p {
+   	padding-top: 1%;
+   	text-align: left;
+   	line-height: 2em;
+   	font-size: .9rem;
+   }
+
+/* ==========================================================================
+   ingredients:
+   ========================================================================== */
+   #ingredients{
+	
+   	background-color: #EE8E43;
+   	
+
+   }
+
+   #ingredients h2{
+   	/*padding: 70px 50px 90px 50px;*/
+   	margin: 0px;
+   	text-transform: uppercase;
+   	margin-left: 5%;
+   	padding-top: 7%;
+   }
+
+   #ingredients-wrapper {
+   	display: flex;
+   	flex-direction: row;
+   	flex-wrap: wrap;
+   	justify-content: flex-start;
+   	margin-left: 5%;
+   }
+
+   form{
+   	font-size: 1rem;
+   	display: block;
+   	margin-top: 1em;
+   	line-height: 1.5em;
+   	width: 30%;
+   }
+
+label, input {
+    display: block;
+}
+
+label {
+    margin-top: 15px;
+}
+
+   /* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+     content: '';
+    position: absolute;
+    left: 0px;
+    /* padding: 0px; */
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid #aaa; */
+    background: #f8f8f8;
+    border-radius: 10px;
+    /* box-shadow: inset 0 1px 3px rgba(0,0,0,.3); */
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '•';
+    position: absolute;
+    top: -9px;
+    left: -2px;
+    /* text-align: center; */
+    font-size: 50px;
+    line-height: 0.8;
+    color: rgba(255, 204, 255, 29.47);
+    transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+#circleWrapper {
+	width: 30%;
+    align-self: flex-end;
+}
+
+#circle {
+    width: 200px;
+    height: 200px;
+    border: 4px solid white;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+    margin-bottom: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+	
+
+#circle p {
+	text-align: center;
+	font-family: 'Yeseva One';
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding: 5%;
+}
+
+
+
+   #ingredients-image {
+   	width:30%;
+   	align-self: flex-end;
+
+   }
+
+   #ingredients-image #cup41 {
+   	display: block;
+   	width:60%;
+   	height: auto;
+   	transform: scaleX(-1);
+   	margin-bottom: .5rem;
+   }
+
+   #ingredients-image #cup42 {
+   	display: block;
+   	width:60%;
+   	height: auto;
+   }
+
+   
+/* ==========================================================================
+   directions:
+   ========================================================================== */
+#directions {
+	
+}
+   #directions h2 {
+
+   	text-transform: uppercase;
+   	margin-left: 5%;
+   	padding-top: 7%;
+   	padding-bottom: 2%;
+   }
+
+   .carousel-wrapper {
+	max-width: 856px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.slides {
+	transition: all .3s ease-in-out;
+	display: flex;
+	width: 400%;
+}
+
+#button-wrapper {
+	text-align: center;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    margin: 10px 20px;
+}
+
+
+
+/* ====================================================
+	Adjustments
+	==================================================== */
+
+	#adjustments {
+		
+		background-color: rgba(255, 204, 255, 0.47);
+		opacity: 50%;
+	}
+
+	#adjustments h2 {
+
+		text-transform: uppercase;
+		margin-left: 5%;
+		padding-top: 7%;
+		padding-bottom: 2%;
+	}
+
+	#adjustments-wrapper{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: baseline;
+	}
+
+	#sweetness {
+		width: 25%;
+	}
+
+	#sweetness #sugar {
+		display: block;
+		width:70%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 1rem;
+
+	}
+
+	#spicyness {
+		width: 25%;
+	}
+
+	#spicyness #spice {
+		display: block;
+		width:80%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 1rem;
+		transform: scaleX(-1);
+
+	}
+
+	#strength {
+		width: 25%;
+	}
+
+	#strength #strength {
+		display: block;
+		width:70%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: 1rem;
+		transform: scaleX(-1);
+
+	}
+
+/* ====================================================
+	TeaLeafFortunes
+	==================================================== */
+
+	#teaLeafFortunes {
+		background-color: #f4f2f3;
+		
+	}
+
+	#teaLeafFortunes h2{
+		/*padding: 70px 50px 90px 50px;*/
+		margin: 0px;
+		text-transform: uppercase;
+		margin-left: 5%;
+		padding-top: 7%;
+	}
+
+
+
